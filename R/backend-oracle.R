@@ -34,6 +34,17 @@ dbplyr_edition.Oracle <- function(con) {
 }
 
 #' @export
+sql_query_wrap.SQLiteConnection <- function(con, from, name = NULL, ..., lvl = 0) {
+  sql_query_wrap_helper(
+    con = con,
+    from = from,
+    name = name,
+    lvl = lvl,
+    as = FALSE
+  )
+}
+
+#' @export
 sql_query_select.Oracle <- function(con,
                                     select,
                                     from,
